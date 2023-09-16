@@ -315,6 +315,27 @@ let loser = "Glimmer";
 
 //CODE HERE
 
+function theEliminator(contestants, looser) {
+  for (i = 0; i < contestants.length; i++) {
+    if (contestants[i] === looser) {
+      contestants.splice(i, 1);
+      console.log(`${looser} has been ELIMINATED!!`);
+    }
+  }
+  return contestants;
+}
+
+let remainingContenstants = theEliminator(contestants, "Glimmer");
+remainingContenstants = theEliminator(remainingContenstants, "Marvel");
+remainingContenstants = theEliminator(remainingContenstants, "Thresh");
+remainingContenstants = theEliminator(remainingContenstants, "Fox-face");
+remainingContenstants = theEliminator(remainingContenstants, "Cato");
+remainingContenstants = theEliminator(remainingContenstants, "Rue");
+remainingContenstants = theEliminator(remainingContenstants, "Clove");
+remainingContenstants = theEliminator(remainingContenstants, "Peeta");
+
+console.log(remainingContenstants);
+
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo.";
 /*
@@ -323,6 +344,12 @@ let sampleString = "Hi, my name is Kylo.";
 */
 
 //CODE HERE
+
+function shoutItOut(shoutThis) {
+  console.log(shoutThis.toUpperCase());
+}
+
+shoutItOut(sampleString);
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -334,6 +361,26 @@ let sampleString = "Hi, my name is Kylo.";
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+
+//CODE HERE
+function emailCheck(email) {
+  let response = "";
+
+  console.log(`received ${email}`);
+  const cleanedEmail = email.replaceAll(" ", "");
+  console.log(`cleaned ${cleanedEmail}`);
+
+  if (cleanedEmail.includes("@")) {
+    response = "Email Verified";
+  } else {
+    response = "Must Provide a Valid Email Address";
+  }
+
+  console.log(response);
+  return response;
+}
+
+emailCheck("   d.beilfuss@   gmail.com       ");
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
